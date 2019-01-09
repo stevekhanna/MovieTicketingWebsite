@@ -25,6 +25,8 @@ and additional services offered by the theatre. This is done through the means o
 website. Customers can browse through and ultimately book movie tickets,
 showtimes and other services offered by the theatre without having to be physically
 present at the theatre.
+
+
 **Project Design:** There are three types of users for our movie ticketing website.
 Namely, regular customers (denoted as customers), members, and admins. The
 extended entity relationship diagram explains how these three types are related to the
@@ -61,10 +63,8 @@ particular date = D1; any other user cannot rent theatre 1 on date D1 between ST
 and ET1 and vice versa. It also ensures that no theatres are allowed to be rented if
 not within the time constraint provided by the admin.
 
+
 **Implementation:**
-
-
-
 The algorithm mentioned in lecture was followed fully for converting the EER to the
 relational model. (The citation for the textbook is at the end). There were no unusual
 decisions made during this process.
