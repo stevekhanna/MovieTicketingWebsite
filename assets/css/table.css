@@ -1,0 +1,32 @@
+body {
+
+    background-color : #484848;
+    margin: 0;
+    padding: 0;
+}
+
+#tableview {
+  opacity:0.6;
+  margin: 50 auto;
+  width: 60% ;
+  padding: 30px 25px;
+  border: 1px solid #000000;
+}
+
+
+#tableview td, #tableview th {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+#tableview tr:nth-child(even){background-color: grey;}
+
+#tableview tr:hover {background-color: #ff4500;}
+
+#tableview th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: red;
+    color: white;
+}
