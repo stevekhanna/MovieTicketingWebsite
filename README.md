@@ -2,7 +2,7 @@
 CPSC 471: Database Final Project
 
 Authors: Masroor Syed
-Heejun Kim 
+Heejun Kim
 Steve Khanna
 
 
@@ -68,141 +68,7 @@ not within the time constraint provided by the admin.
 The algorithm mentioned in lecture was followed fully for converting the EER to the
 relational model. (The citation for the textbook is at the end). There were no unusual
 decisions made during this process.
-The DBMS of choice was phpMyAdmin. The SQL queries are provided below.
-
-
-
-SQL Statements:
-Functions and pseudocode:
-**Select Movie:**
-Inputs: @Movie_Name
-Outputs:@Genre, @Role, @Rating, @Release Date Pseudocode: Connect to the
-database
-Query =
-Select * From Movie
-Where (Movie_Name=@Movie_Name); Parse Query
-Execute Query
-Close connection to the database
-**Select TimeSlot:**
-Inputs: @Time, @Date
-Outputs: @Movie_Name, @Theatre Number, @Seat Number Pseudocode: Connect
-to the database
-Query =
-Select * From TimeSlot
-Where (Time=@Time) AND (Date = @Date); Parse Query
-Execute Query
-Close connection to the database
-**ADD TimeSlot:**
-Inputs: @Time, @Date, @Movie_Name, @Theatre Number, @Seat Number
-Outputs: None
-Pseudocode: Connect to the database Query =
-INSERT INTO Time Slot Values(@Time, @Date, @Movie_Name, @Theatre
-Number, @Seat Number);
-Parse Query Execute Query
-Close connection to the database
-**Save TimeSlot:**
-Inputs: @Time, @Date Outputs: None
-Pseudocode: Connect to the database
-Query = INSERT INTO Time Slot Values(@Time, @Date); Parse Query
-Execute Query
-Close connection to the database
-**Add Movie:**
-Inputs: @Movie_Name, @Genre, @Role, @Rating, @Release Date Outputs: None
-Pseudocode: Connect to the database Query =
-INSERT INTO Time Slot Values(@Movie_Name, @Genre, @Role, @Rating,
-@Release Date ); Parse Query
-Execute Query
-Close connection to the database
-**Save Movie:**
-Inputs: @Movie_Name Outputs: None
-Pseudocode: Connect to the database
-Query = INSERT INTO Movie Slot Values(@Movie_Name); Parse Query
-Execute Query
-Close connection to the database
-**Select Service:**
-Inputs: @ServiceID Outputs:@ServiceName
-Pseudocode: Connect to the database Query =
-Select * From Service
-Where (ServiceID=@ServiceID); Parse Query
-Execute Query
-Close connection to the database
-**Save Service:** Inputs: @ServiceID @ServiceName Outputs: None
-Pseudocode: Connect to the database
-Query = INSERT INTO Service Values(@ServiceID); Parse Query
-Execute Query
-Close connection to the database
-**Add Renting Assignment:** Inputs: @TheatreID @Date @StartTime @EndTime
-Outputs: None
-Pseudocode: Connect to the database
-Query = SELECT TheatreID from Theatre where ServiceName=Rent
-SELECT Date from Timeslot where ServiceName=Rent
-SELECT StartTime from Timeslot where ServiceName=Rent
-SELECT EndTime from Timeslot where ServiceName=Rent
-INSERT INTO Are_assigned_renting Values(@TheatreID, @Date @StartTime
-@EndTime ); Parse Query
-Execute Query
-Close connection to the database
-
-
-**Add Services:**
-Inputs: @ServiceID, @ServiceName Outputs: None
-Pseudocode: Connect to the database Query =
-INSERT INTO Services Values(@ServiceID, @ServiceName ); Parse Query
-Execute Query
-Close connection to the database
-**View Service:**
-Inputs: @Service_id
-Outputs: @Service id @Service Name Pseudocode:
-Connect to the database Query = Select*
-FROM Service Parse Query Execute Query
-Close connection to the database
-**View Movie:**
-Inputs: @null
-Outputs: @Name, @Genre, @Role, @Rating, @Release Date Pseudocode:
-Connect to the database Query = Select*
-FROM Movie Parse Query Execute Query
-Close connection to the database
-**Select Quantity:** Inputs: @Quantity Outputs:@null
-Pseudocode: Connect to the database Query = Select Count Available From seat
-Where (
-Select all From Seat Except
-Select taken seat Where is_taken = true;
-)
-Parse Query
-If (Query > quantity) then
-Assign available seats to the user Edit Seat
-Execute Query
-Close connection to the database
-Seat Check:
-Inputs: @ seat Number Outputs:@ availability
-Pseudocode: Connect to the database Query = Select is_taken from seat
-Where (s.seat_number = @ seat Number) and (s.is_taken = true) Parse Query
-Execute Query
-Close connection to the database Return Query
-**Deduce Seat:**
-Inputs: @ seat Number Outputs:@ null
-Pseudocode: Connect to the database Query = Update is_taken from seat
-Set is_taken = true
-Where (seat_number = @ seat Number) Parse Query
-Execute Query
-Close connection to the database Return Query
-**Payment Process:**
-Inputs: @ Payment_id, @payment method,@amt_paid,@Customer_id,
-Outputs:@ null
-Pseudocode: Connect to the database
-Query = INSERT INTO Paymet Values( @ Payment_id, @payment
-method,@amt_paid,@Customer_id, );
-Parse Query Execute Query
-Close connection to the database Return Query
-Generate Invoice:
-Inputs: @ Payment_id
-Outputs:@ Payment_id, @payment method,@amt_paid,@Customer_id,
-Pseudocode: Connect to the database
-Query =
-Select * From Payments
-Where (Payment id=@Payment_id); Parse Query
-Execute Query
-Close connection to the database
+The DBMS of choice was phpMyAdmin.
 
 
 **Citation:**
@@ -212,9 +78,8 @@ https://www.w3schools.com/w3css/tryw3css_templates_start_page.htm?fbclid=Iw
 AR3jqaOkMWRxA8lD4enlIVYbS797b3c-_mq9tBCwao2DENrcxXlkUU2jpuo
 (n.d.). Retrieved November 6, 2018, from https://templated.co/industrious
 (n.d.). Retrieved November 14, 2018, from https://www.techradar.com/news/best-
-free-web-hosting-sites-of- 2018	
+free-web-hosting-sites-of- 2018
 (n.d.). Retrieved December 2, 2018, from https://www.onlineittuts.com/login-page-
 in-php.html
-Elmasri,	R.A.,	&Navathe,	S.B.	(2017)	Fundamentals	of	database	Systems.	Boston:	
+Elmasri,	R.A.,	&Navathe,	S.B.	(2017)	Fundamentals	of	database	Systems.	Boston:
 Pearson
-
